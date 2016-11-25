@@ -13,7 +13,7 @@ var fileSystemModule = require('fs');
 // read file stream
 var fileStream = fileSystemModule.readFileSync("../Crawler-Result-JSON-Tagged/Crawler-Result-Tagged.json");
 // parse to JSON object
-var Events - JSON - Object = JSON.parse(fileStream);
+var eventsJsonObject = JSON.parse(fileStream);
 
 
 /* CONNECT AND SAVE TO DATABASE PART */
@@ -25,7 +25,19 @@ MongoClient.connect(url, function(err, db) {
         //HURRAY!! We are connected. :)
         console.log('Connection established to', url);
 
-        // do some work here with the database.
+        // Get the Events Collection
+        var eventsCollection = db.collection('EventsCollection');
+
+        // Insert The Events JSON Data
+        eventsCollection.insert(eventsJsonObject, function(err, result) {
+            if (err) {
+                console.log(err);
+            } else {
+                console.log('Inserted');
+            }
+            //Close connection
+            db.close();
+        });
 
         //Close connection
         db.close();
