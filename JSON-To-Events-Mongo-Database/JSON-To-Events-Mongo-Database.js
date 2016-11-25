@@ -28,15 +28,44 @@ MongoClient.connect(url, function(err, db) {
         // Get the Events Collection
         var eventsCollection = db.collection('EventsCollection');
 
-        // Insert The Events JSON Data
-        eventsCollection.insert(eventsJsonObject, function(err, result) {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log('Inserted');
-            }
-            //Close connection
-            db.close();
+        var removeAllData = function(callback) {
+            // remove add the data from db
+            eventsCollection.remove({}, function(err, result) {
+                if (err) {
+                    console.log(err);
+                }
+                console.log(result);
+                db.close();
+            });
+            callback();
+        };
+
+        var insertJsonObject = function(callback) {
+            // Insert The Events JSON Data into db
+            eventsCollection.insert(eventsJsonObject, function(err, result) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log('Inserted');
+                }
+                //Close connection
+                db.close();
+            });
+            callback();
+        };
+
+        var showDbData = function() {
+            // show the database data
+            eventsCollection.find({}).toArray(function(err, result) {
+                console.log(JSON.stringify(result, null, 2));
+                console.log('The Collection Has ' + result.length + ' Items !');
+            });
+        }
+
+        removeAllData(function() {
+            insertJsonObject(function() {
+                showDbData();
+            })
         });
 
         //Close connection

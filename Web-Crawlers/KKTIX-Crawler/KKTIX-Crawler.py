@@ -177,7 +177,8 @@ def crawlSearchPage( inputUrl ):
 urlHead = 'https://kktix.com/events?page='
 urlFoot = '&search=&start_at=2016%2F11%2F20&utf8=%E2%9C%93'
 
-pageLimit = 100
+#TODO 更改要爬幾頁
+pageLimit = 2
 
 for i in range(pageLimit):
 
