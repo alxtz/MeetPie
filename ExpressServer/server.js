@@ -58,7 +58,21 @@ var options = {
     }
 };
 
+// ============================================================ (=x60)
+
+var bodyParserModule = require('body-parser');
+app.use(bodyParserModule.urlencoded({
+    extended: true
+}));
+app.use(bodyParserModule.json());
+
+// ============================================================ (=x60)
+
 app.post("/", function(req, res) {
+
+    console.log('Request Body is ' + JSON.stringify(req.body, null, 2));
+    console.log('Request Keyword is ' + req.body.keyword);
+    console.log('Request Host is ' + req.body.host);
 
     searchModule.searchMongodb(function() {
         console.log('JsonToSend is ' + searchModule.outputJSON);
@@ -68,4 +82,4 @@ app.post("/", function(req, res) {
         console.log('Send Post !');
     });
 
-});
+});;
