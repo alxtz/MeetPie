@@ -1,5 +1,9 @@
 // ============================================================ (=x60)
 
+var searchModule = require('./search')
+
+// ============================================================ (=x60)
+
 var fileSystemModule = require('fs');
 var expressModule = require('express');
 var app = expressModule();
@@ -56,13 +60,11 @@ var options = {
 
 app.post("/", function(req, res) {
 
-    var JsonToSend;
-
-    searchModule(JsonToSend, function() {
-        console.log('JsonToSend is ' + JsonToSend);
+    searchModule.searchMongodb(function() {
+        console.log('JsonToSend is ' + searchModule.outputJSON);
         res.setHeader('Content-Type', 'application/json');
-        console.log('We Send ' + JsonToSend);
-        res.send(JSON.stringify(JsonToSend));
+        console.log('We Send ' + searchModule.outputJSON);
+        res.send(JSON.stringify(searchModule.outputJSON));
         console.log('Send Post !');
     });
 

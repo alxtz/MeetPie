@@ -1,8 +1,10 @@
 var outputFrontEndJSON;
 
+module.exports.outputJSON = outputFrontEndJSON;
+
 // ============================================================ (=x60)
 
-var keyword = 'Hack';
+var keyword = 'code';
 var host = '';
 var type = [];
 if (type == "") {
@@ -102,11 +104,11 @@ var showOutputFrontEndJSON = function(callback) {
 
 // ============================================================ (=x60)
 
-module.exports = function(inputObject, callback) {
+module.exports.searchMongodb = function(callback) {
     queryAtDatabase(function() {
         showOutputFrontEndJSON(function() {
-            inputObject = outputFrontEndJSON;
-            console.log('Set inputObject to ' + inputObject);
+            module.exports.outputJSON = outputFrontEndJSON;
+            console.log('Set inputObject to ' + module.exports.outputJSON);
 
             callback();
         })
