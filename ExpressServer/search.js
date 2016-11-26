@@ -76,7 +76,7 @@ var queryAtDatabase = function(callback) {
         console.log('query text is ' + querySyntaxObject['title']);
 
         eventsCollection.find(querySyntaxObject).toArray(function(err, result) {
-            console.log(JSON.stringify(result, null, 2));
+            //console.log(JSON.stringify(result, null, 2));
             console.log('Search Found ' + result.length + ' Items !');
             outputFrontEndJSON = result;
             callback();
@@ -90,15 +90,25 @@ var queryAtDatabase = function(callback) {
 
 // ============================================================ (=x60)
 
-var showOutputFrontEndJSON = function() {
+var showOutputFrontEndJSON = function(callback) {
     for (var i = 0; i < outputFrontEndJSON.length; i++) {
         delete outputFrontEndJSON[i]['_id'];
         outputFrontEndJSON[i]['fee'] = parseInt(outputFrontEndJSON[i]['fee']);
         outputFrontEndJSON[i]['number_of_people'] = parseInt(outputFrontEndJSON[i]['number_of_people']);
     }
-    console.log('要輸出到前端的JSON為' + JSON.stringify(outputFrontEndJSON, null, 2));
+    //console.log('要輸出到前端的JSON為' + JSON.stringify(outputFrontEndJSON, null, 2));
+    callback();
 }
 
 // ============================================================ (=x60)
 
-queryAtDatabase(showOutputFrontEndJSON);
+module.exports = function(inputObject, callback) {
+    queryAtDatabase(function() {
+        showOutputFrontEndJSON(function() {
+            inputObject = outputFrontEndJSON;
+            console.log('Set inputObject to ' + inputObject);
+
+            callback();
+        })
+    });
+}
