@@ -178,11 +178,11 @@ urlHead = 'https://kktix.com/events?page='
 urlFoot = '&search=&start_at=2016%2F11%2F20&utf8=%E2%9C%93'
 
 #TODO 更改要爬幾頁
-pageLimit = 2
+pageLimit = 100
 
 for i in range(pageLimit):
 
-    #print('第'+str(i+1)+'頁')
+    print('第'+str(i+1)+'頁')
 
     #print('使用網址：' + urlHead + str(i + 1) + urlFoot)
     if crawlSearchPage(urlHead+str(i + 1)+urlFoot) == False:

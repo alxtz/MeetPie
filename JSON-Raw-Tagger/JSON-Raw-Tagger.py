@@ -2,8 +2,8 @@ import json
 import io
 
 # some filters
-frontEnd = ['html','css','javascript','js','vue','react','front','sass','web','bootstrap','ruby','網頁','SEO','fullstack','全端','bootstrap']
-backEnd = ['back','rails','fullstack','全端','nodejs','node.js']
+frontEnd = ['html','css','javascript','vue','react','front','sass','suss','bootstrap','ruby','網頁製作','SEO','fullstack','全端','webapp']
+backEnd = ['backend','back-end','rails','fullstack','全端','nodejs','node.js']
 imageProcess = ['ps','photoshop','pr','premiere','adobe','圖層','影像','後製','illustrator','krita','攝影']
 conf = ['conf','研討會','SITCON','HITCON']
 campusAndClub = ['電機','資工','資管','台大','臺大','臺灣大學','台灣大學','開源社','台科大']
@@ -13,11 +13,11 @@ app = ['ios','swift','android','java','xamarin','web app','webapp']
 career = ['22k','實習','silicon']
 game = ['rpg','遊戲','game']
 dataAndAI = ['google','data','數據','資料','分析','analy','static','人工智慧','機器學習','chatbot']
-security = ['hack','駭','黑','逆','碼','封包','HITCON','TDOH']
+security = ['hack','駭','黑','逆','碼','封包','HITCON','TDOH','安全']
 codingAndDeveloping = ['hackathon','黑客松','開發','coding','develop','studio','workshop','code','git','程式']
 system = ['linux','mint','ubuntu','mac','windows']
 hardware = ['duino','8051']
-social = ['meetup','SOSCET','社群']
+social = ['meetup','SOSCET','社群','開源']
 network = ['web','互聯網','雲端']
 
 filterArray = [frontEnd, backEnd, imageProcess, conf, campusAndClub, software, programmingLanguage, app, career, game, dataAndAI, security, codingAndDeveloping, system, hardware, social, network]

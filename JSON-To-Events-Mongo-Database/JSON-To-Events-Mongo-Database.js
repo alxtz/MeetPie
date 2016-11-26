@@ -56,9 +56,19 @@ MongoClient.connect(url, function(err, db) {
 
         var showDbData = function() {
             // show the database data
-            eventsCollection.find({}).toArray(function(err, result) {
-                console.log(JSON.stringify(result, null, 2));
-                console.log('The Collection Has ' + result.length + ' Items !');
+            var eventsCollectionResult = eventsCollection.find({}).limit(0);
+
+            eventsCollectionResult.toArray(function(err, result) {
+                if (err) {
+                    console.log('Find Err : ' + err);
+                    //Close connection
+                    db.close();
+                } else {
+                    console.log(JSON.stringify(result, null, 2));
+                    console.log('The Collection Has ' + result.length + ' Items !');
+                    //Close connection
+                    db.close();
+                }
             });
         }
 
@@ -68,7 +78,5 @@ MongoClient.connect(url, function(err, db) {
             })
         });
 
-        //Close connection
-        db.close();
     }
 });
