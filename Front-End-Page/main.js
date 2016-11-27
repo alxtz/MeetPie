@@ -21,20 +21,17 @@ $(document).ready(function() {
             locationArray.push('其他');
         }
 
+        var nameArray = ['前端', '後端', '影像處理', 'Conf', '校園&社團', '軟體', '程式語言', 'app', '工作', '遊戲', '數據分析&AI', '資安', '開發', '作業系統', '硬體', '社群', '網路'];
         var typeArray = [];
 
-        if ($('#typeA').prop('checked') == true) {
-            typeArray.push('前端');
+        for (var i = 1; i <= 17; i++) {
+            var idString = '#type' + i;
+            if ($(idString).prop('checked') == true) {
+                typeArray.push(nameArray[i - 1]);
+            }
         }
-        if ($('#typeB').prop('checked') == true) {
-            typeArray.push('後端');
-        }
-        if ($('#typeC').prop('checked') == true) {
-            typeArray.push('研討會');
-        }
-        if ($('#typeD').prop('checked') == true) {
-            typeArray.push('定期聚');
-        }
+
+        console.log('type Array is ' + typeArray);
 
         jsonData = {
             url: 'http://localhost:8080',

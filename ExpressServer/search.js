@@ -4,9 +4,9 @@ module.exports.outputJSON = outputFrontEndJSON;
 
 // ============================================================ (=x60)
 
-var keyword = 'code';
+var keyword = '';
 var host = '';
-var type = [];
+var type = ['工作', '前端'];
 if (type == "") {
     console.log('不限類別');
     type = ['前端', '後端', 'Conf', '校園&社團', '軟體', '程式語言', 'app', '工作', '遊戲', '數據分析&AI', '資安', '開發', '作業系統', '硬體', '社群', '網路', '影像處理'];

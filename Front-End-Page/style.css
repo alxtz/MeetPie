@@ -75,23 +75,38 @@ body form div.positionCheck input {
 
 body form div.typeCheck {
 	text-align: center;
-	margin-top: -50px;
+	margin-top: -40px;
 }
 
-body form div.typeCheck p {
+body form div.typeCheck p#checkTitle {
 	font-family: "Monaco";
 	display: inline-block;
 	font-size: 30px;
 	color: #bb6cff;
 }
 
-body form div.typeCheck input {
+body form div.typeCheck div {
+	display: inline-block;
+	margin-right: 15px;
+	padding: 0;
+}
+
+body form div.typeCheck div p {
+	display: inline-block;
+	font-size: 30px;
+	color: #bb6cff;
+	font-family: "Monaco";
+	margin: 0;
+}
+
+body form div.typeCheck div input {
+	display: inline-block;
 	margin: 10px;
 }
 
 body form div.timeCheck {
 	text-align: center;
-	margin-top: -50px;
+	margin-top: 0px;
 }
 
 body form div.timeCheck p {
@@ -111,7 +126,7 @@ body form div.timeCheck input {
 
 body form div.feeCheck {
 	text-align: center;
-	margin-top: -50px;
+	margin-top: -25px;
 }
 
 body form div.feeCheck p {
@@ -131,7 +146,7 @@ body form div.feeCheck input {
 
 body form div.attendCheck {
 	text-align: center;
-	margin-top: -50px;
+	margin-top: -25px;
 }
 
 body form div.attendCheck p {
