@@ -148,7 +148,7 @@ def crawlSearchPage( inputUrl ):
         jsonFile.write('"url":"' + eventUrl + '",')
 
         eventDescription = eachListItem.find('div' , {'class':'description'}).text
-        eventDescription = eventDescription.replace('\\','/').replace('"','\\"').replace('\t','')
+        eventDescription = eventDescription.replace('\\','/').replace('"','\\"').replace('\t','').replace('<','(').replace('>',')')
         if eventDescription == '':
             eventDescription = '無'
         #print( '活動介紹：\n' + TrmClr.UNDERLINE + eventDescription.replace('\n', ' ').replace('\r', '') +TrmClr.ENDC )

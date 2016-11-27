@@ -104,7 +104,16 @@ var showOutputFrontEndJSON = function(callback) {
 
 // ============================================================ (=x60)
 
-module.exports.searchMongodb = function(callback) {
+module.exports.searchMongodb = function(inputRequestObject, callback) {
+    keyword = inputRequestObject.keyword;
+    host = inputRequestObject.host;
+    type = inputRequestObject.type;
+    if (type == "") {
+        console.log('Request不限類別');
+        type = ['前端', '後端', 'Conf', '校園&社團', '軟體', '程式語言', 'app', '工作', '遊戲', '數據分析&AI', '資安', '開發', '作業系統', '硬體', '社群', '網路', '影像處理'];
+    } else {
+        console.log('Request限類別');
+    }
     queryAtDatabase(function() {
         showOutputFrontEndJSON(function() {
             module.exports.outputJSON = outputFrontEndJSON;

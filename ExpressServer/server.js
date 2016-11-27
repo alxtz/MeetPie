@@ -70,11 +70,23 @@ app.use(bodyParserModule.json());
 
 app.post("/", function(req, res) {
 
+    // TODO 少了location
+
+    if (req.body.location == undefined) {
+        req.body.location = new Array();
+    }
+
+    if (req.body.type == undefined) {
+        req.body.type = new Array();
+    }
+
     console.log('Request Body is ' + JSON.stringify(req.body, null, 2));
     console.log('Request Keyword is ' + req.body.keyword);
     console.log('Request Host is ' + req.body.host);
 
-    searchModule.searchMongodb(function() {
+    var requestObject = req.body;
+
+    searchModule.searchMongodb(requestObject, function() {
         console.log('JsonToSend is ' + searchModule.outputJSON);
         res.setHeader('Content-Type', 'application/json');
         console.log('We Send ' + searchModule.outputJSON);
