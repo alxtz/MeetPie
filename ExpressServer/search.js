@@ -35,7 +35,7 @@ var location = ['北', '中'];
 
 var mongodbModule = require('mongodb');
 var MongoClient = mongodbModule.MongoClient;
-var url = 'mongodb://localhost:27017/Events-Mongo-Database';
+var url = 'mongodb://192.168.1.6:27017/Events-Mongo-Database';
 
 var queryAtDatabase = function(callback) {
     MongoClient.connect(url, function(err, db) {
@@ -77,7 +77,7 @@ var queryAtDatabase = function(callback) {
 
         console.log('query text is ' + querySyntaxObject['title']);
 
-        eventsCollection.find(querySyntaxObject).toArray(function(err, result) {
+        eventsCollection.find(querySyntaxObject).limit(100).toArray(function(err, result) {
             //console.log(JSON.stringify(result, null, 2));
             console.log('Search Found ' + result.length + ' Items !');
             outputFrontEndJSON = result;

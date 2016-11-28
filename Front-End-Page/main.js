@@ -34,7 +34,7 @@ $(document).ready(function() {
         console.log('type Array is ' + typeArray);
 
         jsonData = {
-            url: 'http://localhost:8080',
+            url: 'http://140.116.250.18:80',
             type: 'POST',
             dataType: 'json',
             data: {

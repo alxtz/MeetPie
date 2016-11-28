@@ -14,7 +14,7 @@ app.get('/', function(req, res) {
     res.sendFile('../Front-End-Page/index.html');
 });
 
-var server = app.listen(8080, "127.0.0.1", function() {
+var server = app.listen(8080, "192.168.1.6", function() {
     var host = server.address().address;
     var port = server.address().port;
     console.log("Example app listening at http://%s:%s", host, port);
@@ -25,7 +25,7 @@ var server = app.listen(8080, "127.0.0.1", function() {
 app.use(function(req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080/');
+    res.setHeader('Access-Control-Allow-Origin', 'http://140.116.250.18/');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -48,7 +48,7 @@ var searchModule = require('./search');
 // ============================================================ (=x60)
 
 var options = {
-    host: '127.0.0.1',
+    host: '192.168.1.6',
     port: '4040',
     path: '/',
     method: 'POST',
