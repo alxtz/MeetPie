@@ -35,7 +35,7 @@ var location = ['北', '中'];
 
 var mongodbModule = require('mongodb');
 var MongoClient = mongodbModule.MongoClient;
-var url = 'mongodb://192.168.1.6:27017/Events-Mongo-Database';
+var url = 'mongodb://localhost:27017/Events-Mongo-Database';
 
 var queryAtDatabase = function(callback) {
     MongoClient.connect(url, function(err, db) {

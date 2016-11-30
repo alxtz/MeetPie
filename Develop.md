@@ -8,3 +8,9 @@ ajax伺服器的port : 8080
 3. 開啟DB server
 4. 執行JSON-To-DB
 5. 執行node server
+
+{
+    "Mode":"Develop" or "Deploy"
+    "DB-Host-URL":"mongodb://localhost:27017/Events-Mongo-Database",
+
+}

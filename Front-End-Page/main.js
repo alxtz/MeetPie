@@ -34,7 +34,7 @@ $(document).ready(function() {
         console.log('type Array is ' + typeArray);
 
         jsonData = {
-            url: 'http://140.116.250.18:80',
+            url: 'http://localhost:8080/',
             type: 'POST',
             dataType: 'json',
             data: {
@@ -95,18 +95,22 @@ function showObject(inputData) {
 
     resultBlock =
         '<div class="resultDiv">' +
-        '<p class="title">活動標題：' + inputData.title + '</p>' +
+        '<div class="eventIntroBox">' +
+        '<p class="title">' + inputData.title + '</p>' +
         '<p class="location">活動地點：' + inputData.location + '</p>' +
         '<p class="date">活動日期：' + inputData.start_date + ' ~ ' + inputData.end_date + '</p>' +
         '<p class="type">活動類型：' + typeList + '</p>' +
-        '<p class="description">活動介紹：' + inputData.description + '</p>' +
-        '<p>活動報名網址：</p><a class="url" href="' + inputData.url + '">' + inputData.url + '</a>' +
+        '<p class="description">' + inputData.description + '</p>' +
+        '<a class="url" target="_blank" href="' + inputData.url + '">立刻報名</a>' +
         '<p class="host">活動主辦單位：' + inputData.host + '</p>' +
         '<p class="fee">活動費用：' + inputData.fee + '</p>' +
         '<p class="number_of_people">活動人數：' + inputData.number_of_people + '</p>' +
         '<p class="source">活動來源：' + inputData.source + '</p>' +
-        '<img class="image_url" src="' + inputData.image_url + '">' +
         '</div>';
+    if (inputData.image_url !== 'https://t.kfs.io/assets/kktix-og-icon-06989f684356f4d1ff2fc4ab0efd7498.png') {
+        resultBlock += '<img class="image_url" src="' + inputData.image_url + '">';
+    }
+    resultBlock += '</div>';
 
-    $('form').after(resultBlock);
+    $('div#eventBackground').after(resultBlock);
 }

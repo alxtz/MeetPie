@@ -14,7 +14,7 @@ app.get('/', function(req, res) {
     res.sendFile('../Front-End-Page/index.html');
 });
 
-var server = app.listen(8080, "192.168.1.6", function() {
+var server = app.listen(8080, "localhost", function() {
     var host = server.address().address;
     var port = server.address().port;
     console.log("Example app listening at http://%s:%s", host, port);
@@ -25,7 +25,7 @@ var server = app.listen(8080, "192.168.1.6", function() {
 app.use(function(req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://140.116.250.18/');
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost/');
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -47,16 +47,16 @@ var searchModule = require('./search');
 
 // ============================================================ (=x60)
 
-var options = {
-    host: '192.168.1.6',
-    port: '4040',
-    path: '/',
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Content-Length': 140
-    }
-};
+// var options = {
+//     host: '192.168.1.6',
+//     port: '4040',
+//     path: '/',
+//     method: 'POST',
+//     headers: {
+//         'Content-Type': 'application/x-www-form-urlencoded',
+//         'Content-Length': 140
+//     }
+// };
 
 // ============================================================ (=x60)
 
