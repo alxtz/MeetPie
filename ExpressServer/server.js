@@ -1,20 +1,49 @@
 // ============================================================ (=x60)
 
+var fileSystemModule = require('fs');
+var serverConfigString = fileSystemModule.readFileSync("../Server-Config.json");
+var serverConfigObject = JSON.parse(serverConfigString);
+console.log('Server Config is \n'+serverConfigString);
+
+var mainPage = '';
+var FrontEndListenIP = '';
+var FrontEndListenPort = '';
+var AllowFrontEndOrigin = '';
+
+if(serverConfigObject['Mode']=='Develop-Mode'){
+    console.log('Mode is Develop-Mode...');
+
+    mainPage = 'indexDevelop.html'
+    FrontEndListenIP = serverConfigObject['Develop-Mode']["Front-End-Listen-IP"];
+    FrontEndListenPort = serverConfigObject['Develop-Mode']["Front-End-Listen-Port"];
+    AllowFrontEndOrigin = serverConfigObject['Develop-Mode']['Allow-Front-End-Origin']
+
+}else{
+    console.log('Mode is Deploy-Mode...');
+
+    mainPage = 'indexDeploy.html'
+    FrontEndListenIP = serverConfigObject['Deploy-Mode']["Front-End-Listen-IP"];
+    FrontEndListenPort = serverConfigObject['Deploy-Mode']["Front-End-Listen-Port"];
+    AllowFrontEndOrigin = serverConfigObject['Deploy-Mode']['Allow-Front-End-Origin']
+
+}
+
+// ============================================================ (=x60)
+
 var searchModule = require('./search')
 
 // ============================================================ (=x60)
 
-var fileSystemModule = require('fs');
 var expressModule = require('express');
 var app = expressModule();
 
 app.use(expressModule.static('../Front-End-Page'));
 
 app.get('/', function(req, res) {
-    res.sendFile('../Front-End-Page/index.html');
+    res.sendFile(mainPage ,{ root: __dirname +'/../Front-End-Page/' });
 });
 
-var server = app.listen(8080, "localhost", function() {
+var server = app.listen(FrontEndListenPort, FrontEndListenIP, function() {
     var host = server.address().address;
     var port = server.address().port;
     console.log("Example app listening at http://%s:%s", host, port);
@@ -25,7 +54,7 @@ var server = app.listen(8080, "localhost", function() {
 app.use(function(req, res, next) {
 
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost/');
+    res.setHeader('Access-Control-Allow-Origin', AllowFrontEndOrigin);
 
     // Request methods you wish to allow
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
@@ -44,19 +73,6 @@ app.use(function(req, res, next) {
 // ============================================================ (=x60)
 
 var searchModule = require('./search');
-
-// ============================================================ (=x60)
-
-// var options = {
-//     host: '192.168.1.6',
-//     port: '4040',
-//     path: '/',
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/x-www-form-urlencoded',
-//         'Content-Length': 140
-//     }
-// };
 
 // ============================================================ (=x60)
 
