@@ -41,6 +41,7 @@ body div#eventBackground p.appIntro {
 
 body div#eventBackground form {
 	margin: 20px;
+	position: relative;
 }
 
 body div#eventBackground form div.eventKeyword {
@@ -58,7 +59,7 @@ body div#eventBackground form div.eventKeyword input {
 	padding: 15px;
 	color: #e5c200;
 	letter-spacing: 2px;
-	font-family: "Monaco";
+	font-family: "Oswald";
 }
 
 body div#eventBackground form div.eventKeyword ::-webkit-input-placeholder {
@@ -106,13 +107,14 @@ body div#eventBackground form div.positionCheck input {
 
 body div#eventBackground form div.typeCheck {
 	text-align: center;
-	margin-top: 25px;
-	padding: 15px 10px;
-	padding-top: 0px;
-	padding-left: 10px;
-	padding-right: 0;
 	background-color: rgba(0, 0, 0, 0.7);
 	border-radius: 10px;
+	display: inline-block;
+	margin: 0 auto;
+	margin-top: 50px;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
 }
 
 body div#eventBackground form div.typeCheck p#checkTitle {

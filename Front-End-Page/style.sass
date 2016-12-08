@@ -35,6 +35,7 @@ body
             color: #cccccc
         form
             margin: 20px
+            position: relative
             div.eventKeyword
                 margin-bottom: 25px
                 input
@@ -48,7 +49,7 @@ body
                     padding: 15px
                     color: #e5c200
                     letter-spacing: 2px
-                    font-family: "Monaco"
+                    font-family: "Oswald"
                 ::-webkit-input-placeholder
                     color: #8eec00
                     text-align: center
@@ -83,13 +84,14 @@ body
                     margin: 10px
             div.typeCheck
                 text-align: center
-                margin-top: 25px
-                padding: 15px 10px
-                padding-top: 0px
-                padding-left: 10px
-                padding-right: 0
                 background-color: rgba(0,0,0,0.7)
                 border-radius: 10px
+                display: inline-block
+                margin: 0 auto
+                margin-top: 50px
+                position: absolute
+                left: 50%
+                transform: translate(-50%, 0)
                 p#checkTitle
                     font-family: "Monaco"
                     display: inline-block

@@ -11,10 +11,11 @@ var url = 'mongodb://localhost:27017/Events-Mongo-Database';
 // import fileSystemModule
 var fileSystemModule = require('fs');
 // read file stream
-var fileStream = fileSystemModule.readFileSync("../Crawler-Result-JSON-Tagged/Crawler-Result-Tagged.json");
+var fileStreamKKTIX = fileSystemModule.readFileSync("../Crawler-Result-JSON-Tagged/Crawler-Result-Tagged-KKTIX.json");
+var fileStreamMeetup = fileSystemModule.readFileSync("../Crawler-Result-JSON-Tagged/Crawler-Result-Tagged-Meetup.json");
 // parse to JSON object
-var eventsJsonObject = JSON.parse(fileStream);
-
+var eventsJsonObjectKKTIX = JSON.parse(fileStreamKKTIX);
+var eventsJsonObjectMeetup = JSON.parse(fileStreamMeetup);
 
 /* CONNECT AND SAVE TO DATABASE PART */
 // Use connect method to connect to the Server
@@ -42,13 +43,20 @@ MongoClient.connect(url, function(err, db) {
 
         var insertJsonObject = function(callback) {
             // Insert The Events JSON Data into db
-            eventsCollection.insert(eventsJsonObject, function(err, result) {
+            eventsCollection.insert(eventsJsonObjectKKTIX, function(err, result) {
                 if (err) {
                     console.log(err);
                 } else {
-                    console.log('Inserted');
+                    console.log('Inserted KKTIX');
                 }
-                //Close connection
+                db.close();
+            });
+            eventsCollection.insert(eventsJsonObjectMeetup, function(err, result) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log('Inserted Meetup');
+                }
                 db.close();
             });
             callback();
@@ -56,7 +64,7 @@ MongoClient.connect(url, function(err, db) {
 
         var showDbData = function() {
             // show the database data
-            var eventsCollectionResult = eventsCollection.find({}).limit(0);
+            var eventsCollectionResult = eventsCollection.find({}).limit(1);
 
             eventsCollectionResult.toArray(function(err, result) {
                 if (err) {

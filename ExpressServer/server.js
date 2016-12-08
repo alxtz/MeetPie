@@ -3,14 +3,14 @@
 var fileSystemModule = require('fs');
 var serverConfigString = fileSystemModule.readFileSync("../Server-Config.json");
 var serverConfigObject = JSON.parse(serverConfigString);
-console.log('Server Config is \n'+serverConfigString);
+console.log('Server Config is \n' + serverConfigString);
 
 var mainPage = '';
 var FrontEndListenIP = '';
 var FrontEndListenPort = '';
 var AllowFrontEndOrigin = '';
 
-if(serverConfigObject['Mode']=='Develop-Mode'){
+if (serverConfigObject['Mode'] == 'Develop-Mode') {
     console.log('Mode is Develop-Mode...');
 
     mainPage = 'indexDevelop.html'
@@ -18,7 +18,7 @@ if(serverConfigObject['Mode']=='Develop-Mode'){
     FrontEndListenPort = serverConfigObject['Develop-Mode']["Front-End-Listen-Port"];
     AllowFrontEndOrigin = serverConfigObject['Develop-Mode']['Allow-Front-End-Origin']
 
-}else{
+} else {
     console.log('Mode is Deploy-Mode...');
 
     mainPage = 'indexDeploy.html'
@@ -40,14 +40,27 @@ var app = expressModule();
 app.use(expressModule.static('../Front-End-Page'));
 
 app.get('/', function(req, res) {
-    res.sendFile(mainPage ,{ root: __dirname +'/../Front-End-Page/' });
+    res.sendFile(mainPage, {
+        root: __dirname + '/../Front-End-Page/'
+    });
 });
+
+// app.get('/home/', function(req, res) {
+//     res.sendFile('home.html', {
+//         root: __dirname + '/../Front-End-Page/CCNS-HomePage/'
+//     });
+// });
 
 var server = app.listen(FrontEndListenPort, FrontEndListenIP, function() {
     var host = server.address().address;
     var port = server.address().port;
     console.log("Example app listening at http://%s:%s", host, port);
 });
+
+// ============================================================ (=x60)
+
+var faviconModule = require('serve-favicon');
+app.use(faviconModule(__dirname + '/../Front-End-Page/images/ccnsicon.ico'));
 
 // ============================================================ (=x60)
 

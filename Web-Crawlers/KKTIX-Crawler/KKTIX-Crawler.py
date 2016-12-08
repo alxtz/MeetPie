@@ -21,7 +21,7 @@ firstI = 1
 
 hasEm = False
 
-jsonFile = open('../../Crawler-Result-JSON-Raw/Crawler-Result-Raw.json','w')
+jsonFile = open('../../Crawler-Result-JSON-Raw/Crawler-Result-Raw-KKTIX.json','w')
 jsonFile.write('[')
 
 #{"employees":[

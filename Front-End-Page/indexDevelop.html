@@ -11,6 +11,7 @@
 
         <title>MeetPie - 資訊活動通</title>
 
+        <link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
 
     </head>
@@ -18,15 +19,15 @@
     <body>
 
         <div id="eventBackground">
-            <p class="appNameEng">Meet<span class="redPie">Pie</span>(Develop-Mode)</p>
+            <p class="appNameEng">Meet<span class="redPie">Pie</span></p>
             <p class="appIntro">Find your Meetup, Easy as Pie ! - 資訊活動搜尋器</p>
 
             <form id="searchForm" action="" method="post">
                 <div class="eventKeyword">
-                    <input type="text" id="eventKeyword" placeholder="「關鍵字」">
+                    <input type="text" id="eventKeyword" placeholder="Type... and press Enter">
                 </div>
 
-                <div class="hostKeyword">
+                <div class="hostKeyword notShow">
                     <input type="text" id="hostKeyword" placeholder="「主辦單位」">
                 </div>
 
@@ -47,7 +48,7 @@
                         <p>前端</p>
                         <input type="checkbox" id="type1">
                     </div>
-                    <div>
+                    <div class="notShow">
                         <p>後端</p>
                         <input type="checkbox" id="type2">
                     </div>
@@ -59,7 +60,7 @@
                         <p>Conf</p>
                         <input type="checkbox" id="type4">
                     </div>
-                    <div>
+                    <div class="notShow">
                         <p>社團</p>
                         <input type="checkbox" id="type5">
                     </div>
@@ -67,23 +68,23 @@
                         <p>軟體</p>
                         <input type="checkbox" id="type6">
                     </div>
-                    <div>
+                    <div class="notShow">
                         <p>程式語言</p>
                         <input type="checkbox" id="type7">
                     </div>
-                    <div>
+                    <div class="notShow">
                         <p>app</p>
                         <input type="checkbox" id="type8">
                     </div>
-                    <div>
+                    <div class="notShow">
                         <p>工作</p>
                         <input type="checkbox" id="type9">
                     </div>
-                    <div>
+                    <div class="notShow">
                         <p>遊戲</p>
                         <input type="checkbox" id="type10">
                     </div>
-                    <div>
+                    <div class="notShow">
                         <p>數據分析 & AI</p>
                         <input type="checkbox" id="type11">
                     </div>
@@ -91,15 +92,15 @@
                         <p>資安</p>
                         <input type="checkbox" id="type12">
                     </div>
-                    <div>
+                    <div class="notShow">
                         <p>開發</p>
                         <input type="checkbox" id="type13">
                     </div>
-                    <div>
+                    <div class="notShow">
                         <p>Linux</p>
                         <input type="checkbox" id="type14">
                     </div>
-                    <div>
+                    <div class="notShow">
                         <p>硬體</p>
                         <input type="checkbox" id="type15">
                     </div>
@@ -107,7 +108,7 @@
                         <p>社群</p>
                         <input type="checkbox" id="type16">
                     </div>
-                    <div>
+                    <div class="notShow">
                         <p>網路</p>
                         <input type="checkbox" id="type17">
                     </div>
@@ -138,7 +139,7 @@
             </form>
         </div>
 
-        <div class="githubBox">
+        <div class="githubBox notShow">
             <a href="https://github.com/fate412460/EventsSearch" target="_blank">GitHub</a>
         </div>
 
