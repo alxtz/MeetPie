@@ -42,6 +42,9 @@ section.search
         letter-spacing: 2px
         text-align: center
         padding-top: 17.5vh
+        @media screen and (max-width: 800px)
+            font-size: 15vw
+            padding-top: 10vh
         span.colorPie
             color: #d6958d
     h2.siteIntro
@@ -53,10 +56,13 @@ section.search
         color: #9b9b9b
         padding-bottom: 7.5vh
         font-style: italic
+        @media screen and (max-width: 800px)
+            font-size: 4vw
     form
         width: 525px
         margin: 0 auto
         position: relative
+        max-width: 90%
         input
             width: 100%
             font-family: "Ubuntu"

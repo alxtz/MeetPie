@@ -43,6 +43,13 @@ section.search h1.siteName {
 	padding-top: 17.5vh;
 }
 
+@media screen and (max-width: 800px) {
+	section.search h1.siteName {
+		font-size: 15vw;
+		padding-top: 10vh;
+	}
+}
+
 section.search h1.siteName span.colorPie {
 	color: #d6958d;
 }
@@ -58,10 +65,17 @@ section.search h2.siteIntro {
 	font-style: italic;
 }
 
+@media screen and (max-width: 800px) {
+	section.search h2.siteIntro {
+		font-size: 4vw;
+	}
+}
+
 section.search form {
 	width: 525px;
 	margin: 0 auto;
 	position: relative;
+	max-width: 90%;
 }
 
 section.search form input {
