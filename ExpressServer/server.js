@@ -13,7 +13,7 @@ var AllowFrontEndOrigin = '';
 if (serverConfigObject['Mode'] == 'Develop-Mode') {
     console.log('Mode is Develop-Mode...');
 
-    mainPage = 'indexDevelop.html'
+    mainPage = 'DevelopVersion/indexDevelop.html'
     FrontEndListenIP = serverConfigObject['Develop-Mode']["Front-End-Listen-IP"];
     FrontEndListenPort = serverConfigObject['Develop-Mode']["Front-End-Listen-Port"];
     AllowFrontEndOrigin = serverConfigObject['Develop-Mode']['Allow-Front-End-Origin']
@@ -21,7 +21,7 @@ if (serverConfigObject['Mode'] == 'Develop-Mode') {
 } else {
     console.log('Mode is Deploy-Mode...');
 
-    mainPage = 'indexDeploy.html'
+    mainPage = 'DeployVersion/indexDeploy.html'
     FrontEndListenIP = serverConfigObject['Deploy-Mode']["Front-End-Listen-IP"];
     FrontEndListenPort = serverConfigObject['Deploy-Mode']["Front-End-Listen-Port"];
     AllowFrontEndOrigin = serverConfigObject['Deploy-Mode']['Allow-Front-End-Origin']
