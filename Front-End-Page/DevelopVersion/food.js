@@ -5,7 +5,7 @@ $(document).ready(function() {
         e.preventDefault();
         startSearch();
     });
-    
+
 });
 
 
@@ -74,8 +74,7 @@ function showObject(inputData) {
 
     resultBlock =
     '<div class="resultDiv">' +
-        '<a href="' + inputData.url + '" class="imgLink" target="_blank">' +
-            '<img src="' + inputData.image_url + '" alt="eventPic">' +
+        '<a href="' + inputData.url + '" class="imgLink" target="_blank" style="background-image: url(' + inputData.image_url + ')">' +
         '</a>' +
         '<a href="' + inputData.url + '" class="titleLink" target="_blank">' +
             '<h2>' + inputData.title + '</h2>' +

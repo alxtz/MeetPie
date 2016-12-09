@@ -8,7 +8,7 @@ class eventObject:
     title = "" #
     start_date = "" #
     end_date = ""
-    url = "" #
+    url = "https://a248.e.akamai.net/secure.meetupstatic.com/s/img/041003812446967856280/logo/svg/logo--script.svg" #
     description = "" #
     source = "Meetup" #
     host = "" #
