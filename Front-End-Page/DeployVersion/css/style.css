@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css?family=Oswald:700|Passion+One:700|Rubik');
 @import "search.css";
 @import "result.css";
+@import "localFonts.css";
 
 body{
 
