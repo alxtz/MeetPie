@@ -6,13 +6,6 @@ $(document).ready(function() {
         startSearch();
     });
 
-    $("body").on('keyup', function (e) {
-        if (e.keyCode == 13) {
-            console.log('Clicked Enter !');
-            startSearch();
-        }
-    });
-
 });
 
 
