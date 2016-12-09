@@ -59,8 +59,8 @@ var server = app.listen(FrontEndListenPort, FrontEndListenIP, function() {
 
 // ============================================================ (=x60)
 
-var faviconModule = require('serve-favicon');
-app.use(faviconModule(__dirname + '/../Front-End-Page/images/ccnsicon.ico'));
+// var faviconModule = require('serve-favicon');
+// app.use(faviconModule(__dirname + '/../Front-End-Page/images/ccnsicon.ico'));
 
 // ============================================================ (=x60)
 

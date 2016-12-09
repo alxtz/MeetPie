@@ -1,0 +1,49 @@
+section.result {
+	padding-top: 50px;
+	padding-left: 50px;
+	padding-right: 50px;
+	background-color: white;
+}
+
+section.result div.resultDiv {
+	border-radius: 3px;
+	background-color: #f8f8f8;
+	border: 2px solid #dddddd;
+	float: left;
+	width: 40.5%;
+	margin-left: 6.5%;
+	margin-right: 2.5%;
+	padding: 25px;
+	padding-left: 150px;
+	margin-bottom: 50px;
+	height: 225px;
+	position: relative;
+}
+
+section.result div.resultDiv img {
+	position: absolute;
+	width: 200px;
+	height: 120px;
+	left: -75px;
+	border-radius: 4px;
+}
+
+section.result div.resultDiv h2 {
+	font-family: "Oswald","Noto Sans CJK TC";
+	font-weight: 500;
+	font-size: 22px;
+	margin: 0;
+	margin-right: 25px;
+	letter-spacing: 1px;
+	color: #414141;
+	line-height: 27px;
+}
+
+section.result div.resultDiv p {
+	color: #9b9b9b;
+	height: 100px;
+	overflow: hidden;
+	margin: 0;
+	margin-right: 25px;
+	margin-top: 20px;
+}

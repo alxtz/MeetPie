@@ -1,0 +1,90 @@
+@mixin bd1
+    border: 2px solid red
+@mixin bd2
+    border: 2px solid purple
+@mixin bd3
+    border: 2px solid yellow
+@mixin bd4
+    border: 2px solid cyan
+
+section.search
+    height: 100vh
+    position: relative
+    div.backgroundPie
+        position: absolute
+        height: 50%
+        width: 100%
+        bottom: -20%
+        background-image: url('../images/PieBG.jpg')
+        background-position: center
+        background-size: 100vw
+    div.backgroundFade
+        position: absolute
+        height: 30%
+        width: 100%
+        bottom: 0
+        background: transparent
+        background: linear-gradient(bottom, rgba( 255, 255, 255, 255 ) 0%, rgba( 255, 255, 255, 1 ) 100% )
+        background: -webkit-linear-gradient( bottom, rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 1 ) 100% )
+    div.backgroundFade2
+        position: absolute
+        height: 10%
+        width: 100%
+        bottom: -20%
+        background: transparent
+        background: linear-gradient(top, rgba( 255, 255, 255, 255 ) 0%, rgba( 255, 255, 255, 1 ) 100% )
+        background: -webkit-linear-gradient( top, rgba( 255, 255, 255, 0 ) 0%, rgba( 255, 255, 255, 1 ) 100% )
+    h1.siteName
+        color: #4a4a4a
+        margin: 0
+        font-family: "TypoGraphica"
+        font-size: 15vh
+        letter-spacing: 2px
+        text-align: center
+        padding-top: 17.5vh
+        span.colorPie
+            color: #d6958d
+    h2.siteIntro
+        margin: 0
+        text-align: center
+        font-family: "Open Sans"
+        font-weight: 600
+        font-size: 4vh
+        color: #9b9b9b
+        padding-bottom: 7.5vh
+        font-style: italic
+    form
+        width: 525px
+        margin: 0 auto
+        position: relative
+        input
+            width: 100%
+            font-family: "Ubuntu"
+            font-weight: 300
+            border: 1px solid #d7d7d7
+            outline: none
+            display: block
+            padding: 10px 20px
+            font-size: 25px
+            border-radius: 3px
+            -webkit-border-radius: 3px
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16),0 0 0 1px rgba(0,0,0,0.08)
+            letter-spacing: 1px
+            color: #5a5a5a
+        input:hover
+            box-shadow: 0 3px 8px 0 rgba(0,0,0,0.2),0 0 0 1px rgba(0,0,0,0.08)
+        button#searchButton
+            border: none
+            outline: none
+            background-color: white
+            position: absolute
+            width: 50px
+            height: 80%
+            top: 10%
+            right: 10px
+            display: flex
+            align-items: center
+            justify-content: center
+            i
+                color: #9a9a9a
+                font-size: 25px
