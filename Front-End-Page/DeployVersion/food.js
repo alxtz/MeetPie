@@ -56,6 +56,10 @@ function startSearch() {
             for (var i = 0; i < data.length; i++) {
                 showObject(data[i]);
             }
+            // Scroll to Bottom
+            $('html, body').animate({
+                scrollTop: $("section.result").offset().top
+            }, 1500);
         })
         .fail(function(data) {
             console.log("Ajax Error !");
