@@ -42,7 +42,7 @@ section.result div.resultDiv {
 		padding-left: 22.08vw;
 		margin-bottom: 7.36vw;
 		padding-right: 1vw;
-		height: 33.12vw;
+		height: 39.12vw;
 	}
 }
 
@@ -95,7 +95,7 @@ section.result div.resultDiv p {
 	font-size: 1.05vw;
 	color: #9b9b9b;
 	height: 57.5%;
-	overflow: hidden;
+	overflow: scroll;
 	margin: 0;
 	margin-right: 25px;
 	margin-top: 10px;
@@ -103,7 +103,7 @@ section.result div.resultDiv p {
 
 @media screen and (max-width: 800px) {
 	section.result div.resultDiv p {
-		height: 47.5%;
+		height: 53.5%;
 		font-size: 2.1vw;
 		margin-top: 2vw;
 	}
