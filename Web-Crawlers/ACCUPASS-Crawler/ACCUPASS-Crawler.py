@@ -103,9 +103,6 @@ def getChildPage(childUrl):
         print('Get Child Page Error , Try Again')
         chromeDriver.get(childUrl)
         time.sleep(10)
-        nonlocal childSourceCode
-        nonlocal soup
-        nonlocal body
         childSourceCode = chromeDriver.page_source
         soup = BeautifulSoup(childSourceCode, 'html.parser')
         body = soup.find('body')
