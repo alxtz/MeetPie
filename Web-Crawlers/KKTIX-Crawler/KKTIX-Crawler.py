@@ -1,6 +1,11 @@
 from bs4 import BeautifulSoup
 import requests
 import time
+import datetime
+
+now = datetime.datetime.now()
+
+print('今天是',now.year,'年',now.month,'月',now.day,'日')
 
 title = 'foo'
 start_date = 'bar'
@@ -175,7 +180,7 @@ def crawlSearchPage( inputUrl ):
 
 
 urlHead = 'https://kktix.com/events?page='
-urlFoot = '&search=&start_at=2016%2F11%2F20&utf8=%E2%9C%93'
+urlFoot = '&search=&start_at=' + str(now.year) + '%2F' + str(now.month) + '%2F' + str(now.day) + '&utf8=%E2%9C%93'
 
 #TODO 更改要爬幾頁
 pageLimit = 100

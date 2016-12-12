@@ -6,6 +6,13 @@ section.result {
 	background-color: white;
 }
 
+@media screen and (max-width: 800px) {
+	section.result {
+		padding-left: 0.68vw;
+		padding-right: 0.68vw;
+	}
+}
+
 section.result div.resultDiv {
 	border-radius: 3px;
 	background-color: #f8f8f8;
@@ -78,9 +85,9 @@ section.result div.resultDiv h2 {
 
 @media screen and (max-width: 800px) {
 	section.result div.resultDiv h2 {
-		font-size: 3.3vw;
+		font-size: 4.4vw;
 		margin-right: 3.68vw;
-		line-height: 3.9vw;
+		line-height: 4.8vw;
 	}
 }
 
@@ -91,11 +98,12 @@ section.result div.resultDiv p {
 	overflow: hidden;
 	margin: 0;
 	margin-right: 25px;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 @media screen and (max-width: 800px) {
 	section.result div.resultDiv p {
+		height: 47.5%;
 		font-size: 2.1vw;
 		margin-top: 2vw;
 	}
