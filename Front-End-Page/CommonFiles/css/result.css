@@ -72,9 +72,9 @@ section.result div.resultDiv a.imgLink {
 }
 
 section.result div.resultDiv h2 {
-	font-family: "Oswald","Noto Sans CJK TC";
-	font-weight: 500;
-	font-size: 1.65vw;
+	font-family: "Fjalla One","MicroHei";
+	font-weight: 600;
+	font-size: 1.85vw;
 	margin: 0;
 	margin-right: 1.84vw;
 	/*25px*/
@@ -85,6 +85,7 @@ section.result div.resultDiv h2 {
 
 @media screen and (max-width: 800px) {
 	section.result div.resultDiv h2 {
+		word-break: break-all;
 		font-size: 4.4vw;
 		margin-right: 3.68vw;
 		line-height: 4.8vw;
@@ -92,10 +93,11 @@ section.result div.resultDiv h2 {
 }
 
 section.result div.resultDiv p {
+	font-family: "Open Sans","MicroHei";
 	font-size: 1.05vw;
 	color: #9b9b9b;
 	height: 57.5%;
-	overflow: scroll;
+	overflow: hidden;
 	margin: 0;
 	margin-right: 25px;
 	margin-top: 10px;

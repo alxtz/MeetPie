@@ -2,3 +2,8 @@
     font-family: 'TypoGraphica';
     src: url('../fonts/TypoGraphica.otf');
 }
+
+@font-face {
+    font-family: 'MicroHei';
+    src: url('../fonts/wqy-microhei.ttf');
+}

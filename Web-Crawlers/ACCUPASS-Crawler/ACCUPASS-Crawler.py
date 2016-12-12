@@ -99,6 +99,17 @@ def getChildPage(childUrl):
     soup = BeautifulSoup(childSourceCode, 'html.parser')
     body = soup.find('body')
 
+    if body.find('a',{'class':'event-organizer'}) == None:
+        print('Get Child Page Error , Try Again')
+        chromeDriver.get(childUrl)
+        time.sleep(10)
+        nonlocal childSourceCode
+        nonlocal soup
+        nonlocal body
+        childSourceCode = chromeDriver.page_source
+        soup = BeautifulSoup(childSourceCode, 'html.parser')
+        body = soup.find('body')
+
     global eventObjectList
     eventObjectList[jsonIndex-1]['host'] = body.find('a',{'class':'event-organizer'}).findAll(text=True,recursive=False)[1].replace(' ','').replace('\n','')
     print (body.find('a',{'class':'event-organizer'}).findAll(text=True,recursive=False)[1].replace(' ','').replace('\n',''))
