@@ -48,6 +48,6 @@ def tagRawJson(inputPath, outputPath):
 
 tagRawJson('../Crawler-Result-JSON-Raw/Crawler-Result-Raw-KKTIX.json','../Crawler-Result-JSON-Tagged/Crawler-Result-Tagged-KKTIX.json')
 
-tagRawJson('../Crawler-Result-JSON-Raw/Crawler-Result-Raw-Meetup.json','../Crawler-Result-JSON-Tagged/Crawler-Result-Tagged-Meetup.json')
+# tagRawJson('../Crawler-Result-JSON-Raw/Crawler-Result-Raw-Meetup.json','../Crawler-Result-JSON-Tagged/Crawler-Result-Tagged-Meetup.json')
 
-tagRawJson('../Crawler-Result-JSON-Raw/Crawler-Result-Raw-ACCUPASS.json','../Crawler-Result-JSON-Tagged/Crawler-Result-Tagged-ACCUPASS.json')
+# tagRawJson('../Crawler-Result-JSON-Raw/Crawler-Result-Raw-ACCUPASS.json','../Crawler-Result-JSON-Tagged/Crawler-Result-Tagged-ACCUPASS.json')

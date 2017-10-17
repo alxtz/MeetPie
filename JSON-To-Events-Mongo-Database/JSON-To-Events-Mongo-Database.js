@@ -12,12 +12,12 @@ var url = 'mongodb://localhost:27017/Events-Mongo-Database';
 var fileSystemModule = require('fs');
 // read file stream
 var fileStreamKKTIX = fileSystemModule.readFileSync("../Crawler-Result-JSON-Tagged/Crawler-Result-Tagged-KKTIX.json");
-var fileStreamMeetup = fileSystemModule.readFileSync("../Crawler-Result-JSON-Tagged/Crawler-Result-Tagged-Meetup.json");
-var fileStreamACCUPASS = fileSystemModule.readFileSync("../Crawler-Result-JSON-Tagged/Crawler-Result-Tagged-ACCUPASS.json");
+// var fileStreamMeetup = fileSystemModule.readFileSync("../Crawler-Result-JSON-Tagged/Crawler-Result-Tagged-Meetup.json");
+// var fileStreamACCUPASS = fileSystemModule.readFileSync("../Crawler-Result-JSON-Tagged/Crawler-Result-Tagged-ACCUPASS.json");
 // parse to JSON object
 var eventsJsonObjectKKTIX = JSON.parse(fileStreamKKTIX);
-var eventsJsonObjectMeetup = JSON.parse(fileStreamMeetup);
-var eventsJsonObjectACCUPASS = JSON.parse(fileStreamACCUPASS);
+// var eventsJsonObjectMeetup = JSON.parse(fileStreamMeetup);
+// var eventsJsonObjectACCUPASS = JSON.parse(fileStreamACCUPASS);
 
 /* CONNECT AND SAVE TO DATABASE PART */
 // Use connect method to connect to the Server
@@ -53,22 +53,22 @@ MongoClient.connect(url, function(err, db) {
                 }
                 db.close();
             });
-            eventsCollection.insert(eventsJsonObjectMeetup, function(err, result) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log('Inserted Meetup');
-                }
-                db.close();
-            });
-            eventsCollection.insert(eventsJsonObjectACCUPASS, function(err, result) {
-                if (err) {
-                    console.log(err);
-                } else {
-                    console.log('Inserted ACCUPASS');
-                }
-                db.close();
-            });
+            // eventsCollection.insert(eventsJsonObjectMeetup, function(err, result) {
+            //     if (err) {
+            //         console.log(err);
+            //     } else {
+            //         console.log('Inserted Meetup');
+            //     }
+            //     db.close();
+            // });
+            // eventsCollection.insert(eventsJsonObjectACCUPASS, function(err, result) {
+            //     if (err) {
+            //         console.log(err);
+            //     } else {
+            //         console.log('Inserted ACCUPASS');
+            //     }
+            //     db.close();
+            // });
             callback();
         };
 

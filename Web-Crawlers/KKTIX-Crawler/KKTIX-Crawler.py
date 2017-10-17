@@ -29,12 +29,6 @@ hasEm = False
 jsonFile = open('../../Crawler-Result-JSON-Raw/Crawler-Result-Raw-KKTIX.json','w')
 jsonFile.write('[')
 
-#{"employees":[
-#    {"firstName":"John", "lastName":"Doe"},
-#    {"firstName":"Anna", "lastName":"Smith"},
-#    {"firstName":"Peter", "lastName":"Jones"}
-#]}
-
 class TrmClr:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
